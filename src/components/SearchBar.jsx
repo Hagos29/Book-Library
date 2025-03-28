@@ -24,14 +24,14 @@ const SearchBar = () => {
           Search
         </button>
       </div>
-      <div>
+      <div className="grid grid-cols-2 gap-4  md:grid-cols-3 lg:grid-cols-4">
         {books.map((book, index) => (
           <div key={index}> 
             <div>
               <h4>{book.title}</h4>
             </div>
             <div>
-              <img className=" h-3/6 w-2/6 p-3"
+              <img className=" h-48 w-36"
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}.jpg`} 
                 alt={book.title}
               />
