@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React from "react";
 
-const BookCard = () => {
-  const[books, setBooks] = useState([]);
+const BookCard = ({ book }) => {
 
-  useEffect(() => {
-       fetch('/')
-       .then(response => response.json())
-       .then(data => setBooks(data))
-  ,[]});
+  if (!book) {
+    return <div className="p-2 border rounded shadow">No book data available</div>;
+  }
+
 
   return (
-    <div></div>
-  )
-}
+    <div className="p-2 border rounded shadow">
+      <img
+        className="h-48 w-36"
+        src={`https://covers.openlibrary.org/b/id/${book.cover_i}.jpg`}
+        alt={book.title}
+      />
+      <h4 className="text-lg font-bold mt-2">{book.title}</h4>
+    </div>
+  );
+};
 
-export default BookCard
+export default BookCard;
