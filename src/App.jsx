@@ -9,7 +9,6 @@ function App() {
         <span className="text-amber-300 ">Book</span> Library
       </h1>
       <SearchBar/>
-      <BookCard />
       <BookDetails />
     </>
   );
